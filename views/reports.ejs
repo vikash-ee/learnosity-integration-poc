@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Learnosity SDK - NodeJS</title>
+    <script src="//reports.learnosity.com/?v2022.2.LTS"></script>
+</head>
+
+<body>
+<ul>
+    <li><a href="/author">Authoring</a></li>
+    <li><a href="/activity">Activity</a></li>
+    <li><a href="/assess/places_to_visit">Assessment</a></li>
+    <li><a href="/reports">Reports</a></li>
+</ul>
+
+    <h1>Reports API Example</h1>
+
+    <div id="activity-summary-by-group-report"></div>
+
+    <script>
+        const request = <%- JSON.stringify(request) %>;
+        const reportsApp = LearnosityReports.init(request, {
+            readyListener() {
+                console.log('ready');
+            },
+            errorListener(err) {
+                console.log('error', err);
+            }
+        })
+    </script>
+</body>
+
+</html>
